@@ -14,8 +14,10 @@ namespace DataStructures {
 /// deciding those questions isn't really something that I want to do - likely a future consideration though.
 struct GenericContainer  {
     int obj;
+    bool empty = false;
 };
 using Typ = GenericContainer;
 
+extern Typ EmptyContainer;
 
 }

@@ -23,7 +23,7 @@ Typ VectorStack::pop()
 Typ VectorStack::peek()
 {
     if (vec.empty()) {
-        return {};
+        return EmptyContainer;
     }
     auto v = vec.back();
     return v;

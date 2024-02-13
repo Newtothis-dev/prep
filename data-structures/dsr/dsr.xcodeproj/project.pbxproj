@@ -12,6 +12,8 @@
 		5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */; };
 		5CB7AF982B7B01BB00E3E6B4 /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */; };
 		5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */; };
+		5CB7AF9D2B7C0AEC00E3E6B4 /* linked-list-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF9B2B7C0AEC00E3E6B4 /* linked-list-stack.cpp */; };
+		5CB7AF9F2B7C190300E3E6B4 /* data-structures-shared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF9E2B7C190300E3E6B4 /* data-structures-shared.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +40,9 @@
 		5CB7AF962B7A88FE00E3E6B4 /* data-structures-shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "data-structures-shared.h"; path = "../data-structures-shared.h"; sourceTree = "<group>"; };
 		5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stack.cpp; path = ../stack/stack.cpp; sourceTree = "<group>"; };
 		5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "test-runner.cpp"; path = "../test/test-runner.cpp"; sourceTree = "<group>"; };
+		5CB7AF9B2B7C0AEC00E3E6B4 /* linked-list-stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "linked-list-stack.cpp"; path = "../stack/linked-list-stack.cpp"; sourceTree = "<group>"; };
+		5CB7AF9C2B7C0AEC00E3E6B4 /* linked-list-stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "linked-list-stack.h"; path = "../stack/linked-list-stack.h"; sourceTree = "<group>"; };
+		5CB7AF9E2B7C190300E3E6B4 /* data-structures-shared.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "data-structures-shared.cpp"; path = "../data-structures-shared.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,9 @@
 		5CB7AF792B78DC5A00E3E6B4 = {
 			isa = PBXGroup;
 			children = (
+				5CB7AF9E2B7C190300E3E6B4 /* data-structures-shared.cpp */,
+				5CB7AF9B2B7C0AEC00E3E6B4 /* linked-list-stack.cpp */,
+				5CB7AF9C2B7C0AEC00E3E6B4 /* linked-list-stack.h */,
 				5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */,
 				5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */,
 				5CB7AF962B7A88FE00E3E6B4 /* data-structures-shared.h */,
@@ -142,9 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB7AF982B7B01BB00E3E6B4 /* stack.cpp in Sources */,
+				5CB7AF9D2B7C0AEC00E3E6B4 /* linked-list-stack.cpp in Sources */,
 				5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */,
 				5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */,
 				5CB7AF912B78E0B400E3E6B4 /* vector-stack.cpp in Sources */,
+				5CB7AF9F2B7C190300E3E6B4 /* data-structures-shared.cpp in Sources */,
 				5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

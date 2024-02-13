@@ -23,7 +23,7 @@ class StackTester : public Quality::Tester {
 public:
     StackTester(Stack::Type t) : testType(t), Quality::Tester(Quality::RunAllTests, Quality::ResultFormatter::Default) {}
     
-    static bool TestAll(std::string& errStr); 
+    static bool TestAll(std::string& errStr);
     
 protected:
     virtual Quality::TestList& getTests() override;

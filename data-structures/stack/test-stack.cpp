@@ -16,14 +16,39 @@ void StackTester::cleanupTest() {
     testStack.reset();
 }
 
+bool StackTester::TestAll(std::string& errStr) {
+    std::initializer_list<Stack::Type> types = {
+        Stack::VectorStack,
+        Stack::LinkedListStack,
+    };
+    bool allPass = true;
+    for (const auto& t: types) {
+        StackTester st(t);
+        auto res = st.RunTests();
+        errStr += "Testing Stack Type [";
+        errStr += Stack::typeAsStr(t);
+        errStr += "]. With Results: ";
+        if (res.allPassed) {
+            errStr += "All Passed\n";
+        }
+        else {
+            allPass = false;
+            errStr += "\n" + res.errors + "\n";
+        }
+    }
+    return allPass;
+}
 
 bool TestAddThenNotEmpty(DataStructures::Stack* stackToTest, std::string& errStr);
 bool TestAddThenClear(DataStructures::Stack* stackToTest, std::string& errStr);
 bool TestAddThenPeek(DataStructures::Stack* stackToTest, std::string& errStr);
 bool TestPeekDoesNotRemove(DataStructures::Stack* stackToTest, std::string& errStr);
 bool TestPopRemovesItem(DataStructures::Stack* stackToTest, std::string& errStr);
+bool TestPopOrdering(DataStructures::Stack* stackToTest, std::string& errStr);
+
 
 Quality::TestList& StackTester::getTests() {
+    
     static Quality::TestList testList = {
         {
             "Add Item Then Not Empty",
@@ -44,6 +69,10 @@ Quality::TestList& StackTester::getTests() {
         {
             "Pop Removes Items",
             [&](std::string& errStr) -> bool { return TestPopRemovesItem(testStack.get(), errStr); }
+        },
+        {
+            "Pop Removes in right order",
+            [&](std::string& errStr) -> bool { return TestPopOrdering(testStack.get(), errStr); }
         },
     };
     
@@ -132,5 +161,26 @@ bool TestPopRemovesItem(DataStructures::Stack* stackToTest, std::string& errStr)
     return true;
 }
 
-
-
+bool TestPopOrdering(DataStructures::Stack* stackToTest, std::string& errStr) {
+    stackToTest->clear();
+    
+    DataStructures::Typ itm = {.obj = 101010888};
+    DataStructures::Typ itm2 = {.obj = 101010888};
+    stackToTest->push(itm);
+    stackToTest->push(itm2);
+    auto popd1 = stackToTest->pop();
+    if (itm2.obj != popd1.obj) {
+        errStr = "Popped object is not correct";
+        return false;
+    }
+    if (true == stackToTest->isEmpty()) {
+        errStr = "Popping removed too many";
+        return false;
+    }
+    auto popd2 = stackToTest->pop();
+    if (itm.obj != popd2.obj) {
+        errStr = "Popped object is not correct";
+        return false;
+    }    
+    return true;
+}

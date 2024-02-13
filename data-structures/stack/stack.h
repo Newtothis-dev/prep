@@ -5,6 +5,7 @@
 #pragma once
 #include "data-structures-shared.h"
 #include <memory>
+#include <string_view>
 
 namespace DataStructures {
     
@@ -12,9 +13,11 @@ class Stack {
 public:
     
     enum Type {
-        VectorStack, /* vector-stack.h */
+        VectorStack,        /* vector-stack.h */
+        LinkedListStack,    /* linked-list-stack.h */
         
     };
+    static std::string_view typeAsStr(Type t); 
     
     static std::unique_ptr<Stack> Factory(Type t);
     
