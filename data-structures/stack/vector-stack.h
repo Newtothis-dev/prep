@@ -19,6 +19,7 @@ public:
     virtual Typ pop();
     virtual Typ peek();
     virtual bool isEmpty();
+    virtual void clear(); 
 protected:
     std::vector<Typ> vec;
 };

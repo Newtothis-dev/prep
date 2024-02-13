@@ -11,69 +11,84 @@
 
 namespace Quality {
 
-using SpecificTestFx = std::function<bool(std::string&)>;
-struct Test{
+using TestFx = std::function<bool(std::string&)>;
+struct Test {
     std::string_view name;
-    SpecificTestFx run;
+    TestFx execute;
+};
+using TestList = std::vector<Test>;
+
+enum Persistence {
+    QuitOnFailure,
+    RunAllTests
 };
 
-using TestBlock = std::vector<Test>;
-
-struct TestResult {
+struct Results {
     bool allPassed;
-    std::string errorLog;
-    
-    void addFailedTest(const Test& t, const std::string& err) {
-        errorLog += "Test [";
-        errorLog += t.name;
-        errorLog += "] Failed with error [";
-        errorLog += err;
-        errorLog += "]\n";
-    }
+    std::string errors;
 };
 
-/// @class Tester
-/// @brief class to manage the test execution of test blocks.
-/// Class is not strictly necessary here. As written, this is closer to a namespace than a class. Keeping a class for now because
-/// A long term vision of this could be to start to add specific configurations into the tester. Some examples:
-///  - Persistence is passed as an argument to "run" currently, could be a construction configuration
-///  - There's no formatting configurations. Could update this to ouptut "errorLog" as a JSON
-///  - A class allows for inheritence - e.g. if you wanted to create a child class that did shared setup for tests
-class Tester {
 
+
+class ResultFormatter {
 public:
-    enum Persistence {
-        QuitOnFailure,
-        RunAllTests
+    enum Format {
+        Default,
+        /// JSON
+        /// ...
     };
+    static std::unique_ptr<ResultFormatter> Factory(Format f);
     
-    Tester() {}
-    
-    TestResult run(const TestBlock& tests, Persistence persistence=RunAllTests) {
-        TestResult res;
-        std::string testErrLog;
-        for (const auto& _test: tests) {
-            testErrLog.clear();
-            
-            bool passedTest = _test.run(testErrLog);
-            if (passedTest) {
-                continue;
-            }
-            
-            if (testErrLog.empty()) {
-                /// There's no requirement that tests provide an error string (just highly recommended)
-                /// If there is no error stirng, we populate a generic message for the user.
-                testErrLog = "<No Error Log>";
-            }
-            res.addFailedTest(_test, testErrLog);
-            
-            if (QuitOnFailure == persistence) {
-                break;
-            }
-        }
-        res.allPassed = res.errorLog.empty();
-        return res;
-    }
+    virtual ~ResultFormatter(){}
+    virtual bool format(std::string& outp, const std::string_view& testName, const std::string& testErr) = 0;
 };
+
+class DefaultFormatter: public ResultFormatter{
+    virtual bool format(std::string& outp, const std::string_view& testName, const std::string& testErr);
+};
+
+
+class Tester {
+public:
+    
+    Tester(Persistence p, ResultFormatter::Format f=ResultFormatter::Default) : persist(p), formatter(ResultFormatter::Factory(f)) {}
+    virtual ~Tester() { }
+    
+    /// @function RunTests
+    /// @brief Runs X tests from the list of tests the tester knows about. X depends on the persistence level passed in at construction.
+    /// @return Results of the tests where the "errors" are formatted by the ResultFormatter type passed at instantiation.
+    Results RunTests();
+    
+protected:
+    struct FailedTest {
+        std::string_view name;
+        std::string errStr;
+    };
+    using FailedTestList = std::vector<FailedTest>;
+    
+    void recordFailedTest(const std::string_view& testName, const std::string& testErr);
+    
+    /// @brief overloadable but default assumption is that the ResultFormatter object will do most of the required heavy lifting.
+    virtual void formatFailures(std::string& formattedOutput);
+    
+    /// Required overload. This is how the tester knows about all the tests in question.
+    virtual TestList& getTests() = 0;
+    /// Overloadable setup and cleanup tooling 
+    virtual void setupTest() { }
+    virtual void cleanupTest() { }
+    
+    /// Standard Getters
+    Persistence checkPersistence() { return persist; }
+    FailedTestList getFailedTests() { return failedTests; }
+private:
+    
+    Persistence persist;
+    FailedTestList failedTests;
+    std::unique_ptr<ResultFormatter> formatter;
+    
+};
+
+
+
 }
 

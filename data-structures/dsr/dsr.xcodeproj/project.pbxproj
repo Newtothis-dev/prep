@@ -10,6 +10,8 @@
 		5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF852B78DC5A00E3E6B4 /* main.cpp */; };
 		5CB7AF912B78E0B400E3E6B4 /* vector-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF8F2B78E0B400E3E6B4 /* vector-stack.cpp */; };
 		5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */; };
+		5CB7AF982B7B01BB00E3E6B4 /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */; };
+		5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,8 @@
 		5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "test-stack.cpp"; path = "../stack/test-stack.cpp"; sourceTree = "<group>"; };
 		5CB7AF942B7A864A00E3E6B4 /* test-stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "test-stack.h"; path = "../stack/test-stack.h"; sourceTree = "<group>"; };
 		5CB7AF962B7A88FE00E3E6B4 /* data-structures-shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "data-structures-shared.h"; path = "../data-structures-shared.h"; sourceTree = "<group>"; };
+		5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = stack.cpp; path = ../stack/stack.cpp; sourceTree = "<group>"; };
+		5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "test-runner.cpp"; path = "../test/test-runner.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		5CB7AF792B78DC5A00E3E6B4 = {
 			isa = PBXGroup;
 			children = (
+				5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */,
+				5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */,
 				5CB7AF962B7A88FE00E3E6B4 /* data-structures-shared.h */,
 				5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */,
 				5CB7AF942B7A864A00E3E6B4 /* test-stack.h */,
@@ -135,9 +141,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB7AF982B7B01BB00E3E6B4 /* stack.cpp in Sources */,
 				5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */,
 				5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */,
 				5CB7AF912B78E0B400E3E6B4 /* vector-stack.cpp in Sources */,
+				5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

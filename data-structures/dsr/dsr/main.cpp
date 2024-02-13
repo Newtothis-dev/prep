@@ -10,8 +10,9 @@
 
 
 int main(int argc, const char * argv[]) {
-    Quality::Tester tester;
+    DataStructures::StackTester tester(DataStructures::Stack::VectorStack);
     
-    const auto& res = tester.run(DataStructures::getAllStackImplTests());
-    printf("%s\n", res.errorLog.c_str()); 
+    const auto& res = tester.RunTests();
+    printf("%s\n", res.errors.c_str()); 
+    printf("FIN\n"); 
 }

@@ -34,3 +34,7 @@ bool VectorStack::isEmpty()
     return vec.empty();
 }
 
+void VectorStack::clear()
+{
+    vec.clear();
+}

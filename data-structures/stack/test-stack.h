@@ -13,13 +13,32 @@
 /// Include the quality namespace
 #include "test-runner.h"
 
+#include <vector>
+
 namespace DataStructures {
 
-/// @brief All stack tests should be designed to the interface to make sure all stacks work in the same way
-const Quality::TestBlock& getStackImplTests(const Stack* iStackObj);
 
-/// @brief get all tests for all implementations of a stack. 
-const Quality::TestBlock& getAllStackImplTests();
+
+class StackTester : public Quality::Tester {
+public:
+    StackTester(Stack::Type t) : testType(t), Quality::Tester(Quality::RunAllTests, Quality::ResultFormatter::Default) {}
+    
+    static bool TestAll(std::string& errStr); 
+    
+protected:
+    virtual Quality::TestList& getTests() override;
+    virtual void setupTest() override;
+    virtual void cleanupTest() override;
+    
+    std::unique_ptr<Stack> testStack;
+    Stack::Type testType;
+    
+    
+};
+
+
+
+
 
 }
 
