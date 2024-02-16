@@ -1,26 +1,26 @@
 //
-//  vector-stack.cpp
+//  std-lib-stack.cpp
 //  dsr
 //
 
-#include "vector-stack.h"
+#include "std-lib-stack.h"
 using  namespace DataStructures;
 
-bool VectorStack::push(Typ inp)
+bool StdLibStack::push(Typ inp)
 {
     auto len = vec.size();
     vec.push_back(inp);
     return len < vec.size();
 }
 
-Typ VectorStack::pop()
+Typ StdLibStack::pop()
 {
     auto v = peek();
     vec.pop_back();
     return v;
 }
 
-Typ VectorStack::peek()
+Typ StdLibStack::peek()
 {
     if (vec.empty()) {
         return EmptyContainer;
@@ -29,12 +29,12 @@ Typ VectorStack::peek()
     return v;
 }
 
-bool VectorStack::isEmpty()
+bool StdLibStack::isEmpty()
 {
     return vec.empty();
 }
 
-void VectorStack::clear()
+void StdLibStack::clear()
 {
     vec.clear();
 }

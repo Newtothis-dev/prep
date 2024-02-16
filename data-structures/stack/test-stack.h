@@ -8,7 +8,7 @@
 /// Interface
 #include "stack.h"
 /// Specific implementation
-#include "vector-stack.h"
+#include "std-lib-stack.h"
 
 /// Include the quality namespace
 #include "test-runner.h"

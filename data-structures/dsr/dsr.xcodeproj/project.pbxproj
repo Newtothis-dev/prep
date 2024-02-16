@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF852B78DC5A00E3E6B4 /* main.cpp */; };
-		5CB7AF912B78E0B400E3E6B4 /* vector-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF8F2B78E0B400E3E6B4 /* vector-stack.cpp */; };
+		5CB7AF912B78E0B400E3E6B4 /* std-lib-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF8F2B78E0B400E3E6B4 /* std-lib-stack.cpp */; };
 		5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */; };
 		5CB7AF982B7B01BB00E3E6B4 /* stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF972B7B01BB00E3E6B4 /* stack.cpp */; };
 		5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF992B7BE86100E3E6B4 /* test-runner.cpp */; };
@@ -32,8 +32,8 @@
 		5CB7AF822B78DC5A00E3E6B4 /* dsr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dsr; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB7AF852B78DC5A00E3E6B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5CB7AF8D2B78DD9300E3E6B4 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ../stack/stack.h; sourceTree = "<group>"; };
-		5CB7AF8F2B78E0B400E3E6B4 /* vector-stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "vector-stack.cpp"; path = "../stack/vector-stack.cpp"; sourceTree = "<group>"; };
-		5CB7AF902B78E0B400E3E6B4 /* vector-stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vector-stack.h"; path = "../stack/vector-stack.h"; sourceTree = "<group>"; };
+		5CB7AF8F2B78E0B400E3E6B4 /* std-lib-stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "std-lib-stack.cpp"; path = "../stack/std-lib-stack.cpp"; sourceTree = "<group>"; };
+		5CB7AF902B78E0B400E3E6B4 /* std-lib-stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "std-lib-stack.h"; path = "../stack/std-lib-stack.h"; sourceTree = "<group>"; };
 		5CB7AF922B7A39BD00E3E6B4 /* test-runner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "test-runner.h"; path = "../test/test-runner.h"; sourceTree = "<group>"; };
 		5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "test-stack.cpp"; path = "../stack/test-stack.cpp"; sourceTree = "<group>"; };
 		5CB7AF942B7A864A00E3E6B4 /* test-stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "test-stack.h"; path = "../stack/test-stack.h"; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 				5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */,
 				5CB7AF942B7A864A00E3E6B4 /* test-stack.h */,
 				5CB7AF922B7A39BD00E3E6B4 /* test-runner.h */,
-				5CB7AF8F2B78E0B400E3E6B4 /* vector-stack.cpp */,
-				5CB7AF902B78E0B400E3E6B4 /* vector-stack.h */,
+				5CB7AF8F2B78E0B400E3E6B4 /* std-lib-stack.cpp */,
+				5CB7AF902B78E0B400E3E6B4 /* std-lib-stack.h */,
 				5CB7AF8D2B78DD9300E3E6B4 /* stack.h */,
 				5CB7AF842B78DC5A00E3E6B4 /* dsr */,
 				5CB7AF832B78DC5A00E3E6B4 /* Products */,
@@ -153,7 +153,7 @@
 				5CB7AF9D2B7C0AEC00E3E6B4 /* linked-list-stack.cpp in Sources */,
 				5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */,
 				5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */,
-				5CB7AF912B78E0B400E3E6B4 /* vector-stack.cpp in Sources */,
+				5CB7AF912B78E0B400E3E6B4 /* std-lib-stack.cpp in Sources */,
 				5CB7AF9F2B7C190300E3E6B4 /* data-structures-shared.cpp in Sources */,
 				5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */,
 			);

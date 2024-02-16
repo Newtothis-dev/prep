@@ -18,7 +18,7 @@ void StackTester::cleanupTest() {
 
 bool StackTester::TestAll(std::string& errStr) {
     std::initializer_list<Stack::Type> types = {
-        Stack::VectorStack,
+        Stack::StdLibStack,
         Stack::LinkedListStack,
     };
     bool allPass = true;
