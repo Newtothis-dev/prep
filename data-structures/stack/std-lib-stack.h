@@ -1,5 +1,5 @@
 //
-//  vector-stack.h
+//  std-lib-stack.h
 //  dsr
 //
 
@@ -11,9 +11,9 @@
 
 namespace DataStructures {
 
-class VectorStack:  public Stack {
+class StdLibStack:  public Stack {
 public:
-    ~VectorStack(){}
+    ~StdLibStack(){}
     
     virtual bool push(Typ inp);
     virtual Typ pop();

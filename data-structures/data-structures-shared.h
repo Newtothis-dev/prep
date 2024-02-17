@@ -18,6 +18,6 @@ struct GenericContainer  {
 };
 using Typ = GenericContainer;
 
-extern Typ EmptyContainer;
+extern const Typ EmptyContainer;
 
 }

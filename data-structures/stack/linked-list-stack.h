@@ -11,20 +11,19 @@ namespace DataStructures {
 class LinkedListStack : public Stack {
 public:
     
-    bool push(DataStructures::Typ inp);
-    DataStructures::Typ pop();
-    DataStructures::Typ peek();
+    bool push(Typ inp);
+    Typ pop();
+    Typ peek();
     bool isEmpty();
     void clear();
     
 protected:
     struct LinkedItem {
-        DataStructures::Typ t;
+        Typ t;
         LinkedItem* nxt = nullptr;
     };
     
     LinkedItem* Head = nullptr;
-    LinkedItem* Tail = nullptr;
 };
 
 }

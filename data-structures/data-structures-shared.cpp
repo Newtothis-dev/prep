@@ -6,4 +6,4 @@
 #include "data-structures-shared.h"
 
 
-DataStructures::Typ DataStructures::EmptyContainer = {.empty=true};
+const DataStructures::Typ DataStructures::EmptyContainer = {.empty=true};

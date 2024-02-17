@@ -13,7 +13,7 @@ class Stack {
 public:
     
     enum Type {
-        VectorStack,        /* vector-stack.h */
+        StdLibStack,        /* std-lib-stack.h */
         LinkedListStack,    /* linked-list-stack.h */
         
     };

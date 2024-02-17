@@ -5,13 +5,13 @@
 
 #include "stack.h"
 
-#include "vector-stack.h"
+#include "std-lib-stack.h"
 #include "linked-list-stack.h"
 
 std::unique_ptr<DataStructures::Stack> DataStructures::Stack::Factory(Type t) {
     switch (t) {
-        case VectorStack: {
-            return std::make_unique<DataStructures::VectorStack>();
+        case StdLibStack: {
+            return std::make_unique<DataStructures::StdLibStack>();
         }
         case LinkedListStack: {
             return std::make_unique<DataStructures::LinkedListStack>();
@@ -23,7 +23,7 @@ std::unique_ptr<DataStructures::Stack> DataStructures::Stack::Factory(Type t) {
 
 std::string_view DataStructures::Stack::typeAsStr(Type t) {
     switch (t) {
-        case VectorStack: {
+        case StdLibStack: {
             return "Vector Stack";
         }
         case LinkedListStack: {
