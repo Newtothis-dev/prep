@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C8405002B88A7E100F20686 /* linked-list-queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C8404FB2B88A7DD00F20686 /* linked-list-queue.cpp */; };
+		5C8405012B88A7E400F20686 /* queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C8404FD2B88A7DD00F20686 /* queue.cpp */; };
+		5C8405022B88A7E700F20686 /* test-queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C8404FA2B88A7DD00F20686 /* test-queue.cpp */; };
 		5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF852B78DC5A00E3E6B4 /* main.cpp */; };
 		5CB7AF912B78E0B400E3E6B4 /* std-lib-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF8F2B78E0B400E3E6B4 /* std-lib-stack.cpp */; };
 		5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7AF932B7A864A00E3E6B4 /* test-stack.cpp */; };
@@ -29,6 +32,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C8404FA2B88A7DD00F20686 /* test-queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "test-queue.cpp"; path = "../queue/test-queue.cpp"; sourceTree = "<group>"; };
+		5C8404FB2B88A7DD00F20686 /* linked-list-queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "linked-list-queue.cpp"; path = "../queue/linked-list-queue.cpp"; sourceTree = "<group>"; };
+		5C8404FC2B88A7DD00F20686 /* linked-list-queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "linked-list-queue.h"; path = "../queue/linked-list-queue.h"; sourceTree = "<group>"; };
+		5C8404FD2B88A7DD00F20686 /* queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = queue.cpp; path = ../queue/queue.cpp; sourceTree = "<group>"; };
+		5C8404FE2B88A7DD00F20686 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = queue.h; path = ../queue/queue.h; sourceTree = "<group>"; };
+		5C8404FF2B88A7DD00F20686 /* test-queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "test-queue.h"; path = "../queue/test-queue.h"; sourceTree = "<group>"; };
 		5CB7AF822B78DC5A00E3E6B4 /* dsr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dsr; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB7AF852B78DC5A00E3E6B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5CB7AF8D2B78DD9300E3E6B4 /* stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ../stack/stack.h; sourceTree = "<group>"; };
@@ -59,6 +68,12 @@
 		5CB7AF792B78DC5A00E3E6B4 = {
 			isa = PBXGroup;
 			children = (
+				5C8404FB2B88A7DD00F20686 /* linked-list-queue.cpp */,
+				5C8404FC2B88A7DD00F20686 /* linked-list-queue.h */,
+				5C8404FD2B88A7DD00F20686 /* queue.cpp */,
+				5C8404FE2B88A7DD00F20686 /* queue.h */,
+				5C8404FA2B88A7DD00F20686 /* test-queue.cpp */,
+				5C8404FF2B88A7DD00F20686 /* test-queue.h */,
 				5CB7AF9E2B7C190300E3E6B4 /* data-structures-shared.cpp */,
 				5CB7AF9B2B7C0AEC00E3E6B4 /* linked-list-stack.cpp */,
 				5CB7AF9C2B7C0AEC00E3E6B4 /* linked-list-stack.h */,
@@ -149,13 +164,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8405002B88A7E100F20686 /* linked-list-queue.cpp in Sources */,
 				5CB7AF982B7B01BB00E3E6B4 /* stack.cpp in Sources */,
 				5CB7AF9D2B7C0AEC00E3E6B4 /* linked-list-stack.cpp in Sources */,
 				5CB7AF952B7A864A00E3E6B4 /* test-stack.cpp in Sources */,
 				5CB7AF862B78DC5A00E3E6B4 /* main.cpp in Sources */,
+				5C8405012B88A7E400F20686 /* queue.cpp in Sources */,
 				5CB7AF912B78E0B400E3E6B4 /* std-lib-stack.cpp in Sources */,
 				5CB7AF9F2B7C190300E3E6B4 /* data-structures-shared.cpp in Sources */,
 				5CB7AF9A2B7BE86100E3E6B4 /* test-runner.cpp in Sources */,
+				5C8405022B88A7E700F20686 /* test-queue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +226,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -263,6 +282,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
