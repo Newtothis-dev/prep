@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include "test-stack.h"
+#include "test-queue.h"
 #include "test-runner.h"
 
 
@@ -18,15 +19,15 @@ int main(int argc, const char * argv[]) {
     
     std::initializer_list<std::function<bool(std::string&)>> tests = {
         DataStructures::StackTester::TestAll,
-        
+        DataStructures::QueueTester::TestAll,
     };
     
     std::string results;
     for (auto& t: tests) {
         t(results);
-        printf("%s\n", results.c_str());
+        printf("%s", results.c_str());
         results.clear();
     }
     
-    printf("FIN\n");
+    printf("\n\nFIN\n");
 }

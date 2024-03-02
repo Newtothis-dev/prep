@@ -15,6 +15,10 @@ bool StdLibStack::push(Typ inp)
 
 Typ StdLibStack::pop()
 {
+    if (vec.empty()) {
+        return EmptyContainer;
+    }
+    
     auto v = peek();
     vec.pop_back();
     return v;
@@ -25,6 +29,7 @@ Typ StdLibStack::peek()
     if (vec.empty()) {
         return EmptyContainer;
     }
+    
     auto v = vec.back();
     return v;
 }
@@ -36,5 +41,7 @@ bool StdLibStack::isEmpty()
 
 void StdLibStack::clear()
 {
-    vec.clear();
+    if (!vec.empty()) {
+        vec.clear();
+    }
 }
